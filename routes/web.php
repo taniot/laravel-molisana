@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//rotta homepage
 Route::get('/', [PageController::class, 'index']);

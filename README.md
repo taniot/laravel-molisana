@@ -4,7 +4,7 @@ Progetto La Molisana
 
 # TODO
 
--   [] Creare un controller per la gestione delle pagine - PageController
+-   [x] Creare un controller per la gestione delle pagine - PageController
 -   [] Gestire rotta homepage
 -   [] Creare un Model -> pastas -> Pasta
 -   [] Creare una Migration

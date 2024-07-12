@@ -8,7 +8,7 @@ Progetto La Molisana
 -   [x] Gestire rotta homepage
 -   [x] Creare un Model -> pastas -> Pasta
 -   [x] Creare una Migration
--   [] Creare un Seeder (opzionale)
+-   [x] Creare un Seeder (opzionale)
 -   [] Creare un controller per la gestione delle paste -> PastaController
 -   [] Gestire rotte paste
 -   [] Creare views

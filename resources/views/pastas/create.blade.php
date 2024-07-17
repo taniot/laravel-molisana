@@ -15,15 +15,41 @@
             Inserisci nuova pasta
         </h1>
 
+        <div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
+
+
         <form action="{{ route('pastas.store') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label class="form-label">Nome pasta</label>
-                <input type="text" class="form-control" name="title">
+                <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+                <div>
+                    @foreach ($errors->get('title') as $message)
+                        {{ $message }}
+                    @endforeach
+                </div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Tempo di cottura</label>
-                <input type="number" class="form-control" name="cooking_time">
+                <input type="number" class="form-control @if ($errors->get('cooking_time')) is-invalid @endif"
+                    name="cooking_time" value="{{ old('cooking_time') }}">
+                @if ($errors->get('cooking_time'))
+                    @foreach ($errors->get('cooking_time') as $message)
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @endforeach
+                @endif
             </div>
             <div class="mb-3">
                 <label class="form-label">Peso</label>

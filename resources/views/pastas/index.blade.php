@@ -13,7 +13,19 @@
     <a href="{{ route('pastas.create') }}">Crea una nuova pasta</a>
     <ul>
         @foreach ($pastas as $pasta)
-            <li><a href="{{ route('pastas.show', $pasta) }}">{{ $pasta->title }} - {{ $pasta->type }}</a></li>
+            <li><a href="{{ route('pastas.show', $pasta->id) }}">{{ $pasta->title }} - {{ $pasta->type }}</a> - <a
+                    href="{{ route('pastas.edit', $pasta->id) }}">edit</a>-
+
+                <form action="{{ route('pastas.destroy', $pasta->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button>delete</button>
+                </form>
+
+
+
+
+            </li>
         @endforeach
     </ul>
 </body>
